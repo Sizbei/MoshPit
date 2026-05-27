@@ -7,16 +7,37 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
     "scheme": "moshpit",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1A1A2E"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/YOUR_PROJECT_ID"
+    },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.moshpit.app",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "MoshPit needs access to your photo library to select photos for collages.",
+        "NSPhotoLibraryAddUsageDescription": "MoshPit needs permission to save collages to your photo library.",
+        "NSCameraUsageDescription": "MoshPit needs camera access to take photos for your collages."
+      }
     },
     "android": {
+      "package": "com.moshpit.app",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "INTERNET"
+      ],
       "predictiveBackGestureEnabled": false
     },
     "web": {
@@ -46,6 +67,14 @@
           "cameraPermission": "Allow MoshPit to take photos for your collages."
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": ""
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    }
   }
 }
