@@ -5,7 +5,8 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
+    "scheme": "moshpit",
     "ios": {
       "supportsTablet": true
     },
@@ -23,8 +24,28 @@
     },
     "plugins": [
       "expo-sharing",
-      "expo-router",
-      "expo-status-bar"
+      [
+        "expo-router",
+        {
+          "root": "src/app"
+        }
+      ],
+      "expo-status-bar",
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow MoshPit to save collages to your photo library.",
+          "savePhotosPermission": "Allow MoshPit to save collages to your photo library.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow MoshPit to access your photos for creating collages.",
+          "cameraPermission": "Allow MoshPit to take photos for your collages."
+        }
+      ]
     ]
   }
 }
